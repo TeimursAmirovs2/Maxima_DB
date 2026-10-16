@@ -1,0 +1,1 @@
+Es izveidoju maxima datubzi ar 3 tabulam

@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from pathlib import Path
 
 from funkcijas import (
     add_client,
@@ -25,6 +26,17 @@ def addFromWindow():
 window = tk.Tk()
 window.title("MaXima datubāze")
 window.geometry("1000x800")
+window.configure(bg="#FFFFFF")
+
+#Attēls
+logo_path = Path(__file__).parent / "logo.png"
+logo = tk.PhotoImage(file=str(logo_path))
+
+logo = logo.subsample(4,4)
+
+logo_place = tk.Label(window, image=logo, bg="#00FFF2")
+
+logo_place.pack(anchor="w", padx=20,pady=10)
 
 #veidojam cilnes
 tabs = ttk.Notebook(window)
@@ -41,7 +53,9 @@ tabs.add(client_tab, text="Klienti")
 header = tk.Label(
     product_tab,
     text="Veikala datubāze",
-    font=("Arial", 20, "bold")
+    font=("Arial", 20, "bold"),
+    bg="#FFFFFF",
+    fg="#1E293B"
 )
 header.pack(pady = 20)
 
